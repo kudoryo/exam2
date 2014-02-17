@@ -11,4 +11,17 @@ cookbook_file "sources.list" do
   action :create
 end
 
+execute "apt-get" do
+    command "apt-get update"
+  action :run
+end
+
+package "apache2" do
+  action :install
+end
+
+package "php5" do
+  action :install
+end
+
 
